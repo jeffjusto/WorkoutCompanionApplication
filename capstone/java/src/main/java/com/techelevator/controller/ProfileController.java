@@ -18,6 +18,10 @@ public class ProfileController {
 
     final String API = "http://localhost:9000";
 
+    public ProfileController(ProfileDao profileDao) {
+        this.profileDao = profileDao;
+    }
+
     @RequestMapping(path = "/profiles", method = RequestMethod.GET)
     public List<Profile> findAllProfiles() {
         List<Profile> profiles = new ArrayList<>();

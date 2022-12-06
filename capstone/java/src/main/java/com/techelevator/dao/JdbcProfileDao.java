@@ -26,8 +26,9 @@ public class JdbcProfileDao implements ProfileDao {
     public List<Profile> findAll() {
         List<Profile> profiles = new ArrayList<>();
         try {
-            String sql = "select profileid,userid,name,email,goals from profile";
+            String sql = "select * from profile";
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            System.out.println(results.toString());
             while (results.next()) {
                 Profile profile = mapRowToProfile(results);
                 profiles.add(profile);
@@ -41,7 +42,7 @@ public class JdbcProfileDao implements ProfileDao {
 
     @Override
     public boolean createProfile(Profile profile) {
-        String insertProfileSql = "insert into profile (profileid,userid,name,email,goals) values (DEFAULT,?,?,?,?)";
+        String insertProfileSql = "insert into profile(profileid,userid,name,email,goals) values (?,?,?,?,?)";
         jdbcTemplate.update(insertProfileSql,profile.getProfileid(),profile.getUserid(),profile.getName(),profile.getEmail(),profile.getGoals());
         SqlRowSet results = jdbcTemplate.queryForRowSet(insertProfileSql);
         return true;
