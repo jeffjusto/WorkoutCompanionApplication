@@ -4,35 +4,38 @@ import java.util.List;
 
 public class Profile {
 
-    private int profileID;
-    private int userID;
+    private int profileid;
+    private int userid;
     private String name;
     private String email;
     //TODO Add Profile Picture
-    private List<String> goals;
+    private String goals;
 
-    public Profile(int profileID, int userID, String name, String email, List<String> goals) {
-        this.profileID = profileID;
-        this.userID = userID;
+    public Profile() {
+    }
+
+    public Profile(int profileid, int userid, String name, String email, String goals) {
+        this.profileid = profileid;
+        this.userid = userid;
         this.name = name;
         this.email = email;
         this.goals = goals;
     }
 
-    public int getProfileID() {
-        return profileID;
+    public int getProfileid() {
+        return profileid;
     }
 
-    public void setProfileID(int profileID) {
-        this.profileID = profileID;
+    public void setProfileid(int profileid) {
+        this.profileid = profileid;
     }
 
-    public int getUserID() {
-        return userID;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     public String getName() {
@@ -51,26 +54,22 @@ public class Profile {
         this.email = email;
     }
 
-    public List<String> getGoal() {
+    public String getGoals() {
         return goals;
     }
 
-    public void setGoal(List<String> goals) {
+    public void setGoals(String goals) {
         this.goals = goals;
     }
 
     @Override
     public String toString() {
         return "Profile{" +
-                "profileID=" + profileID +
-                ", userID=" + userID +
+                "profileid=" + profileid +
+                ", userid=" + userid +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", goal='" + goals + '\'' +
+                ", goals='" + goals + '\'' +
                 '}';
     }
-
-
-
-
 }
