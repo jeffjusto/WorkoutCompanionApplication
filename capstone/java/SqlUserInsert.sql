@@ -1,5 +1,5 @@
-INSERT INTO user (username, password_hash, role)
-VALUES ('nespinosa', '$2a$10$fr3qNHIEnZjMGDQRQp9JPeqjbiCcPTLkQ8a0gkiis48lO329eRLi6', 'USER'),
+INSERT INTO profile (user_id, name, email, goals)
+VALUES (1, 'Nicholas Espinosa', 'nespinosa@gmail.com', 'Get Fit')
 ('nespinosa', '$2a$10$fr3qNHIEnZjMGDQRQp9JPeqjbiCcPTLkQ8a0gkiis48lO329eRLi6', 'USER'),
 ('sraju', '$2a$10$fr3qNHIEnZjMGDQRQp9JPeqjbiCcPTLkQ8a0gkiis48lO329eRLi6', 'USER'),
 ('cwillie', '$2a$10$fr3qNHIEnZjMGDQRQp9JPeqjbiCcPTLkQ8a0gkiis48lO329eRLi6', 'ROLE_EMPLOYEE'),
@@ -9,7 +9,6 @@ VALUES ('nespinosa', '$2a$10$fr3qNHIEnZjMGDQRQp9JPeqjbiCcPTLkQ8a0gkiis48lO329eRL
 ('ichow', '$2a$10$fr3qNHIEnZjMGDQRQp9JPeqjbiCcPTLkQ8a0gkiis48lO329eRLi6', 'ROLE_EMPLOYEE'),
 ('jparker', '$2a$10$fr3qNHIEnZjMGDQRQp9JPeqjbiCcPTLkQ8a0gkiis48lO329eRLi6', 'ROLE_EMPLOYEE')
 
-UPDATE profile
 
 
 

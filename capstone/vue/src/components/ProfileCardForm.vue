@@ -2,27 +2,53 @@
     <form v-on:submit.prevent>
       <div class="field">
         <label for="name">Name</label>
-        <input type="text">
+        <input type="text" v-model="profile.name">
       </div>
       <div class="field">
         <label for="email">E-mail Address</label>
-        <input type="text">
+        <input type="text" v-model="profile.email">
       </div>
       <div class="goals">
         <label for="goals">Goals</label>
-        <input type="text">
+        <input type="text" v-model="profile.goals">
       </div>
       <div class="actions">
-        <button type="button">Cancel</button>&nbsp;
-        <button type="submit">Save Document</button>
+        <button type="button" v-on:click="cancel">Cancel</button>&nbsp;
+        <button type="submit" v-on:click="saveProfile">Save Document</button>
       </div>
     </form>
 </template>
 
 <script>
+import ProfilesService from '../services/ProfilesService';
 export default {
-  
-}
+  name: "profile-card-form",
+    data() {
+        return {
+            profile: {
+              name: '',
+              email: '',
+              goals: '',
+            }
+        }
+    },
+  method: {
+    saveProfile() {
+      ProfilesService.update(this.profile)
+      .then(response => {
+        if (response.status === 201) {
+          this.$router.push("/")
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    },
+    cancel() {
+      this.$router.push("/");
+    }
+  }
+} 
 
 </script>
 
@@ -40,3 +66,11 @@ export default {
       font-family: Arial, Helvetica, sans-serif;
   }
 </style>
+
+ // saveProfile() {
+    //   this.$store.commit('SAVE_PROFILE', this.profile);
+    //   this.profile = {
+    //     name: '',
+    //     email: '',
+    //     goals: '',
+    // };

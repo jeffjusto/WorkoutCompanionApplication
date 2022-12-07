@@ -20,7 +20,7 @@ export default {
     }
     },
     created() {
-        ProfilesService.getAllProfiles().then(response => {
+        ProfilesService.getAll().then(response => {
             this.profiles = response.data;
         });
     }

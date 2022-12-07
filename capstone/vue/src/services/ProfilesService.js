@@ -5,15 +5,15 @@ const http = axios.create({
 })
 
 export default {
-    getAllProfiles() {
+    getAll() {
         return http.get('/profiles');
     },
 
-    createNewProfile(profile) {
+    create(profile) {
         return http.post('/profiles', profile);
     },
 
-    updateProfile(profile) {
+    update(profile) {
         return http.put('/profiles', profile);
     }
 }
