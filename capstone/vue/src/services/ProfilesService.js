@@ -6,6 +6,14 @@ const http = axios.create({
 
 export default {
     getAllProfiles() {
-        return http.get('/profiles')
+        return http.get('/profiles');
+    },
+
+    createNewProfile(profile) {
+        return http.post('/profiles', profile);
+    },
+
+    updateProfile(profile) {
+        return http.put('/profiles', profile);
     }
 }
