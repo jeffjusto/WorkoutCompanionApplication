@@ -74,3 +74,21 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 50px;
+    /* display: flex;
+    flex-direction: column; */
+  }
+  input {
+    width: 200px;
+  }
+
+  button {
+    width: 80px;
+  }
+</style>
