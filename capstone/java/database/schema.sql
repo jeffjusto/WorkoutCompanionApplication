@@ -1,6 +1,5 @@
-BEGIN TRANSACTION;
-
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS profile;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -15,14 +14,12 @@ profile_id serial,
 user_id int not null,
 name varchar(40),
 email varchar(40),
-goals varchar(50),
-constraint uq_profile_id unique(profile_id)
+goals varchar(50));
+
 alter table profile
-add constraint pk_profile_id
+add constraint pk_profile_id 
 primary key (profile_id);
+
+alter table profile
 add constraint fk_user_id
 foreign key (user_id) references users(user_id);
-);
-
-
-COMMIT TRANSACTION;
