@@ -44,7 +44,6 @@ public class JdbcProfileDao implements ProfileDao {
     public boolean createProfile(Profile profile) {
         String insertProfileSql = "insert into profile(profile_id,user_id,name,email,goals) values (DEFAULT,?,?,?,?)";
         jdbcTemplate.update(insertProfileSql,profile.getUserId(),profile.getName(),profile.getEmail(),profile.getGoals());
-        jdbcTemplate.update(insertProfileSql,profile.getUserId(),profile.getName(),profile.getEmail(),profile.getGoals());
         SqlRowSet results = jdbcTemplate.queryForRowSet(insertProfileSql);
         return true;
     }

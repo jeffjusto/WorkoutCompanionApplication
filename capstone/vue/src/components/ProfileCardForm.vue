@@ -25,18 +25,27 @@ export default {
   name: "profile-card-form",
     data() {
         return {
-            profile: {
-              name: '',
-              email: '',
-              goals: '',
-            }
+          profile: {
+            profile_id: 1,
+            user_id: 1,
+            name: 'test',
+            email: 'test',
+            goals: 'test',
+          }
         }
     },
   method: {
     saveProfile() {
-      ProfilesService.update(this.profile)
+      const current = this.$store.state.activeProfile;
+      const profile = {
+        id: current.id,
+        name: current.name,
+        email: current.email,
+        goals: current.goals,
+      }
+      ProfilesService.update(profile.id, profile)
       .then(response => {
-        if (response.status === 201) {
+        if (response.status === 200) {
           this.$router.push("/")
         }
       })

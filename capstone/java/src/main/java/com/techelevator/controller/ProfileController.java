@@ -34,7 +34,7 @@ public class ProfileController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/profile", method = RequestMethod.POST)
+    @RequestMapping(value = "/profiles", method = RequestMethod.POST)
     public boolean createProfile(@RequestBody Profile profile) {
         try {
             profileDao.createProfile(profile);
