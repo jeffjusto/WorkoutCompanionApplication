@@ -6,7 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import Profiles from '../views/Profiles'
-import UpdateProfile from '../views/UpdateProfile'
+import CreateProfile from '../views/CreateProfile'
 
 Vue.use(Router)
 
@@ -64,9 +64,9 @@ const router = new Router({
       }
     },
     {
-      path: "/updateProfile",
-      name: "updateProfile",
-      component: UpdateProfile,
+      path: "/createProfile",
+      name: "createProfile",
+      component: CreateProfile,
       meta: {
         requiresAuth: true
       }

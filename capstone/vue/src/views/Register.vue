@@ -42,7 +42,6 @@
 
 <script>
 import authService from '../services/AuthService';
-import ProfilesService from '../services/ProfilesService';
 
 export default {
   name: 'register',
@@ -71,13 +70,6 @@ export default {
               this.$router.push({
                 path: '/login',
                 query: { registration: 'success' },
-              });
-              //ADD NEW PROFILE
-              ProfilesService.create({
-                user_id: 1,
-                name: '',
-                email: '',
-                goals: ''
               });
             }
           })

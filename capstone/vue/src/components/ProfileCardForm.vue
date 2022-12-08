@@ -20,39 +20,39 @@
 </template>
 
 <script>
-import ProfilesService from '../services/ProfilesService';
+// import ProfilesService from '../services/ProfilesService';
 export default {
   name: "profile-card-form",
     data() {
         return {
           profile: {
-            profile_id: 1,
-            user_id: 1,
-            name: 'test',
-            email: 'test',
-            goals: 'test',
+            profile_id: 0,
+            user_id: 0,
+            name: '',
+            email: '',
+            goals: '',
           }
         }
     },
   method: {
-    saveProfile() {
-      const current = this.$store.state.activeProfile;
-      const profile = {
-        id: current.id,
-        name: current.name,
-        email: current.email,
-        goals: current.goals,
-      }
-      ProfilesService.update(profile.id, profile)
-      .then(response => {
-        if (response.status === 200) {
-          this.$router.push("/")
-        }
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    },
+    // saveProfile() {
+      // const current = this.$store.state.activeProfile;
+      // const profile = {
+      //   user_id: current.id,
+      //   name: current.name,
+      //   email: current.email,
+      //   goals: current.goals,
+      // }
+    //   ProfilesService.create(user_id, profile)
+    //   .then(response => {
+    //     if (response.status === 200) {
+    //       this.$router.push("/")
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.error(error);
+    //   });
+    // },
     cancel() {
       this.$router.push("/");
     }

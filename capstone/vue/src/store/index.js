@@ -16,16 +16,11 @@ if(currentToken != null) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
 }
 
+
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {},
-    activeProfile: {
-      id: null,
-      name: '',
-      email: '',
-      goals: ''
-    }
+    user: currentUser || {}
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
