@@ -120,10 +120,25 @@ export default {
                 return {
                     date: dayjs(`${previousMonth.year()}-${previousMonth.month() + 1}-${previousMonthLastMondayDayOfMonth + index}`).format("YYYY-MM-DD"),
                     isCurrentMonth: false
-                }
-            })
+                };
+            });
 
-        }
+        },
+        nextMonthDays() {
+            const lastDayOfTheMonthWeekday = this.getWeekday(`${this.year}-${this.month}-${this.currentMonthDays.length}`);
+            const nextMonth = dayjs(`${this.year}-${this.month}-01`).add(1, "month");
+            const visibleNumberOfDaysFromNextMonth = lastDayOfTheMonthWeekday ? 7 - lastDayOfTheMonthWeekday : lastDayOfTheMonthWeekday;
+
+            return [...Array(visibleNumberOfDaysFromNextMonth)].map((day, index) => {
+                return {
+                    date: dayjs(`${nextMonth.year()}-${nextMonth.month() + 1}-${index + 1}`).format("YYYY-MM-DD"),
+                    isCurrentMonth: false
+                 };
+             });
+         },
+         
+         
+  
     },
 
     methods: {
