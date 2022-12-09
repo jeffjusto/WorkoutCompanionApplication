@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Profiles from '../views/Profiles'
 import CreateProfile from '../views/CreateProfile'
+import EquipmentList from '../views/EquipmentList'
 
 Vue.use(Router)
 
@@ -70,7 +71,15 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
-    }
+    },
+    {
+      path: "/equipment",
+      name: "equipment",
+      component: EquipmentList,
+      meta: {
+        requiresAuth: true
+      }
+    },
   ]
 })
 

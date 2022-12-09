@@ -33,26 +33,25 @@ public class ProfileController {
         return profiles;
     }
 
-//    @ResponseStatus(HttpStatus.CREATED)
-//    @RequestMapping(value = "/profiles", method = RequestMethod.POST)
-//    public boolean createProfile(@RequestBody Profile profile) {
-//        try {
-//            profileDao.createProfile(profile);
-//        } catch (Exception e){
-//            System.out.println(e.getMessage());
-//        }
-//        return true;
-//    }
-
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/profiles/{user_id}", method = RequestMethod.POST)
-    public boolean createProfile(@RequestBody Profile profile, @PathVariable int user_id) {
+    public boolean createProfile(@RequestBody Profile profile, @PathVariable int userId) {
         try {
-            profileDao.createProfile(profile, user_id);
+            profileDao.createProfile(userId);
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
         return true;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/profiles", method = RequestMethod.PUT)
+    public boolean updateProfile(@RequestBody Profile profile) {
+        try {
+            profileDao.updateProfile(profile);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return true;
+    }
 }

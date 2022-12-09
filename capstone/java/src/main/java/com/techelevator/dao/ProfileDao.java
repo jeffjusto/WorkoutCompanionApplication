@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface ProfileDao {
 
-//    boolean createProfile(Profile profile);
+    boolean createProfile(int userId);
 
-    boolean createProfile(Profile profile, int user_id);
+    boolean updateProfile(Profile profile);
 
     List<Profile> findAll();
 

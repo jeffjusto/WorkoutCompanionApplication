@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Profile;
 import com.techelevator.model.User;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -39,20 +40,25 @@ public class JdbcProfileDao implements ProfileDao {
         return profiles;
     }
 
-//    @Override
-//    public boolean createProfile(Profile profile) {
-//        String insertProfileSql = "INSERT INTO profile (profile_id,user_id,name,email,goals) " +
-//                "VALUES (DEFAULT,?,?,?,?)";
-//        jdbcTemplate.update(insertProfileSql,profile.getUserId(),profile.getName(),profile.getEmail(),profile.getGoals());
-//        SqlRowSet results = jdbcTemplate.queryForRowSet(insertProfileSql);
-//        return true;
-//    }
+    @Override
+    public boolean createProfile(int userId) {
+        String sql = "INSERT INTO profile (profile_id,user_id) " +
+                "VALUES (DEFAULT,?);";
+        jdbcTemplate.update(sql, userId);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        return true;
+    }
 
     @Override
-    public boolean createProfile(Profile profile, int user_id) {
-        String insertProfileSql = "Insert into profile(user_id)\n" +
-                "Select user_id from users where user_id="+user_id;
-        jdbcTemplate.queryForRowSet(insertProfileSql);
+    public boolean updateProfile(Profile profile) {
+        try {
+            String sql = "UPDATE profile " +
+                    "SET name = ?, email = ?, goals = ? " +
+                    "WHERE user_id = ?;" ;
+            jdbcTemplate.update(sql, profile.getName(), profile.getEmail(), profile.getGoals(), profile.getUserId());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         return true;
     }
 

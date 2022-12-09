@@ -5,8 +5,7 @@ const http = axios.create({
 })
 
 export default {
-
-    get(username) {
-        return http.get(`/user/${username}`);
-    }
+    getAll() {
+        return http.get(`/equipment`);
+    },
 }

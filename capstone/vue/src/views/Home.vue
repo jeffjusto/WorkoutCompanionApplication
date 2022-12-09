@@ -25,7 +25,7 @@
         <font-awesome-icon icon="fa-solid fa-people-group" size="6x" />
         <h2>VIEW ALL PROFILES</h2>
       </div>
-      <div class="card" v-on:click="openProfilesList">
+      <div class="card" v-on:click="openEquipmentList">
         <font-awesome-icon icon="fa-solid fa-dumbbell" size="6x" />
         <h2>VIEW MACHINES</h2>
       </div>
@@ -48,6 +48,10 @@ export default {
 
     openProfilesList() {
       this.$router.push({name: 'profiles'});
+    },
+
+    openEquipmentList() {
+      this.$router.push({name: 'equipment'});
     }
   }
 };
