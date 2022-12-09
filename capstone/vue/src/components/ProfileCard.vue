@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="profile-info">
-            <div class="img-container">
+             <div class="img-container">
                 <img src="https://www.pngkey.com/png/full/787-7877336_rand-romas-circular-headshot-gentleman.png" alt="photo">
             </div>
             <h3 class="account-id grey-text">Account ID# {{ profile.profileid }}</h3>
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+
 
 export default {
     name: 'profile',
