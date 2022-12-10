@@ -9,6 +9,7 @@ import Profiles from '../views/Profiles'
 import UpdateProfile from '../views/UpdateProfile'
 import EquipmentList from '../views/EquipmentList'
 import GymLog from '../views/GymLog'
+import Calendar from '../views/Calendar'
 
 Vue.use(Router)
 
@@ -85,6 +86,9 @@ const router = new Router({
       path: "/gymLog",
       name: "gymLog",
       component: GymLog,
+      path: "/calendar",
+      name: "calendar",
+      component: Calendar,
       meta: {
         requiresAuth: true
       }
