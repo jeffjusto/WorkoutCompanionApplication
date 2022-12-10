@@ -8,6 +8,7 @@ import store from '../store/index'
 import Profiles from '../views/Profiles'
 import CreateProfile from '../views/CreateProfile'
 import EquipmentList from '../views/EquipmentList'
+import Calendar from '../views/Calendar'
 
 Vue.use(Router)
 
@@ -80,6 +81,14 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/calendar",
+      name: "calendar",
+      component: Calendar,
+      meta: {
+        requiresAuth: true
+      }
+    }
   ]
 })
 

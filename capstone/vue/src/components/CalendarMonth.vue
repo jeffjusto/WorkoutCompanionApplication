@@ -43,60 +43,37 @@ export default {
     name: "CalendarMonth",
 
     components: {
-        CalendarDateIndicator,
-        CalendarDateSelector,
-        CalendarMonthDayItem,
-        CalendarWeekdays
+       CalendarMonthDayItem,
+    CalendarDateIndicator,
+    CalendarDateSelector,
+    CalendarWeekdays
     },
 
     data(){
         return{
-            selectedDate: dayjs(),
-            today: dayjs().format("YYYY-MM-DD")
+            selectedDate: dayjs()
         };
     },
 
     computed: {
-        days(){
-            return [
-               { date: "2020-06-29", isCurrentMonth: false },
-        { date: "2022-11-30", isCurrentMonth: false },
-        { date: "2022-12-01", isCurrentMonth: true },
-        { date: "2022-12-02", isCurrentMonth: true },
-        { date: "2022-12-03", isCurrentMonth: true },
-        { date: "2022-12-04", isCurrentMonth: true },
-        { date: "2022-12-05", isCurrentMonth: true },
-        { date: "2022-12-06", isCurrentMonth: true },
-        { date: "2022-12-07", isCurrentMonth: true },
-        { date: "2022-12-08", isCurrentMonth: true },
-        { date: "2022-12-09", isCurrentMonth: true },
-        { date: "2022-12-10", isCurrentMonth: true },
-        { date: "2022-12-11", isCurrentMonth: true },
-        { date: "2022-12-12", isCurrentMonth: true },
-        { date: "2022-12-13", isCurrentMonth: true },
-        { date: "2022-12-14", isCurrentMonth: true },
-        { date: "2022-12-15", isCurrentMonth: true },
-        { date: "2022-12-16", isCurrentMonth: true },
-        { date: "2022-12-17", isCurrentMonth: true },
-        { date: "2022-12-18", isCurrentMonth: true },
-        { date: "2022-12-19", isCurrentMonth: true },
-        { date: "2022-12-20", isCurrentMonth: true },
-        { date: "2022-12-21", isCurrentMonth: true },
-        { date: "2022-12-22", isCurrentMonth: true },
-        { date: "2022-12-23", isCurrentMonth: true },
-        { date: "2022-12-24", isCurrentMonth: true },
-        { date: "2022-12-25", isCurrentMonth: true },
-        { date: "2022-12-26", isCurrentMonth: true },
-        { date: "2022-12-27", isCurrentMonth: true },
-        { date: "2022-12-28", isCurrentMonth: true },
-        { date: "2022-12-29", isCurrentMonth: true },
-        { date: "2022-12-30", isCurrentMonth: true },
-        { date: "2022-12-31", isCurrentMonth: true },
-        { date: "2023-01-01", isCurrentMonth: false },
-        { date: "2023-01-02", isCurrentMonth: false }
-       
-            ];
-        },
+        days() {
+      return [
+        ...this.previousMonthDays,
+        ...this.currentMonthDays,
+        ...this.nextMonthDays
+      ];
+    },
+    today() {
+      return dayjs().format("YYYY-MM-DD");
+    },
+
+    month() {
+      return Number(this.selectedDate.format("M"));
+    },
+
+    year() {
+      return Number(this.selectedDate.format("YYYY"));
+    },
         numberOfDaysInMonth(){
             return dayjs(this.selectedDate).daysInMonth();
         },
@@ -151,3 +128,40 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+.calendar-month {
+  position: relative;
+  background-color: var(--grey-200);
+  border: solid 1px var(--grey-300);
+}
+
+.day-of-week {
+  color: var(--grey-800);
+  font-size: 18px;
+  background-color: #fff;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.day-of-week,
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.day-of-week > * {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.days-grid {
+  height: 100%;
+  position: relative;
+  grid-column-gap: var(--grid-gap);
+  grid-row-gap: var(--grid-gap);
+  border-top: solid 1px var(--grey-200);
+}
+
+
+</style>
