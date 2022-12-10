@@ -86,6 +86,11 @@ const router = new Router({
       path: "/gymLog",
       name: "gymLog",
       component: GymLog,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/calendar",
       name: "calendar",
       component: Calendar,
