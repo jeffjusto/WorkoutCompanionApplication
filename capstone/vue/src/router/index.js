@@ -6,8 +6,9 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import Profiles from '../views/Profiles'
-import CreateProfile from '../views/CreateProfile'
+import UpdateProfile from '../views/UpdateProfile'
 import EquipmentList from '../views/EquipmentList'
+import GymLog from '../views/GymLog'
 
 Vue.use(Router)
 
@@ -65,9 +66,9 @@ const router = new Router({
       }
     },
     {
-      path: "/createProfile",
-      name: "createProfile",
-      component: CreateProfile,
+      path: "/updateProfile",
+      name: "updateProfile",
+      component: UpdateProfile,
       meta: {
         requiresAuth: true
       }
@@ -80,6 +81,14 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/gymLog",
+      name: "gymLog",
+      component: GymLog,
+      meta: {
+        requiresAuth: true
+      }
+    }
   ]
 })
 

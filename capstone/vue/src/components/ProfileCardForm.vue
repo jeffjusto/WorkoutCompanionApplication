@@ -1,5 +1,5 @@
 <template>
-    <form v-on:submit.prevent>
+    <form v-on:submit.prevent="saveProfile()">
       <div class="field">
         <label for="name">Name</label>
         <input type="text" v-model="profile.name">
@@ -13,46 +13,40 @@
         <input type="text" v-model="profile.goals">
       </div>
       <div class="actions">
-        <button type="button" v-on:click="cancel">Cancel</button>&nbsp;
-        <button type="submit" v-on:click="saveProfile">Save Document</button>
+        <button type="button" v-on:click="cancel()">Cancel</button>&nbsp;
+        <button type="submit">Save Profile</button>
       </div>
     </form>
 </template>
 
 <script>
-// import ProfilesService from '../services/ProfilesService';
+import ProfilesService from '../services/ProfilesService';
+
 export default {
   name: "profile-card-form",
-    data() {
-        return {
-          profile: {
-            profile_id: 0,
-            user_id: 0,
-            name: '',
-            email: '',
-            goals: '',
-          }
+  data() {
+      return {
+        profile: {
+          profileId: "",
+          userId: this.$store.state.user.id,
+          name: "",
+          email: "",
+          goals: "",
         }
+      }
+  },
+  methods: {
+    saveProfile() {
+      ProfilesService.update(this.$store.state.user.id, this.profile)
+      .then(response => {
+        if (response.status === 201) {
+          this.$router.push("/")
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
     },
-  method: {
-    // saveProfile() {
-      // const current = this.$store.state.activeProfile;
-      // const profile = {
-      //   user_id: current.id,
-      //   name: current.name,
-      //   email: current.email,
-      //   goals: current.goals,
-      // }
-    //   ProfilesService.create(user_id, profile)
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.$router.push("/")
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.error(error);
-    //   });
-    // },
     cancel() {
       this.$router.push("/");
     }

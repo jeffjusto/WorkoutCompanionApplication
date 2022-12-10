@@ -3,8 +3,12 @@ package com.techelevator.controller;
 import com.techelevator.dao.GymLogDao;
 import com.techelevator.dao.JdbcGymLogDao;
 import com.techelevator.model.GymLog;
+import com.techelevator.model.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -12,8 +16,15 @@ public class GymLogController {
 
     private JdbcGymLogDao dao;
     public GymLogController(JdbcGymLogDao dao) {
-        this.dao = dao;
+        try {
+            this.dao = dao;
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
+
+    @RequestMapping(path = "/gymLog", method = RequestMethod.GET)
+    public List<GymLog> getAll() { return dao.getAll();}
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/gymLog", method = RequestMethod.POST)

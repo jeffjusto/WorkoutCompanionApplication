@@ -11,13 +11,9 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-
 public class ProfileController {
 
     private ProfileDao profileDao;
-
-    final String API = "http://localhost:9000";
-
     public ProfileController(ProfileDao profileDao) {
         this.profileDao = profileDao;
     }
@@ -45,7 +41,7 @@ public class ProfileController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(path = "/profiles", method = RequestMethod.PUT)
+    @RequestMapping(path = "/profiles/{user_id}", method = RequestMethod.PUT)
     public boolean updateProfile(@RequestBody Profile profile) {
         try {
             profileDao.updateProfile(profile);

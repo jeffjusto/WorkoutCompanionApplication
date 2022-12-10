@@ -15,9 +15,9 @@ export default {
         ProfileCard
     },
     data() {
-    return {
-        profiles: []
-    }
+        return {
+            profiles: []
+        }
     },
     created() {
         ProfilesService.getAll().then(response => {

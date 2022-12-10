@@ -6,12 +6,32 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class JdbcGymLogDao implements GymLogDao{
 
     private final JdbcTemplate jdbcTemplate;
     public JdbcGymLogDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+    @Override
+    public List<GymLog> getAll() {
+        List<GymLog> gymLogs = new ArrayList<>();
+        try {
+            String sql = "select * from gym_log";
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+//            System.out.println(results.toString());
+            while (results.next()) {
+                GymLog gymLog = mapRowToGymLog(results);
+                gymLogs.add(gymLog);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return gymLogs;
     }
 
     @Override
@@ -25,13 +45,12 @@ public class JdbcGymLogDao implements GymLogDao{
         }
     }
 
-//    private Profile mapRowToGymLog(SqlRowSet rs) {
-//        GymLog gymLog = new Profile();
-//        profile.setProfileId(rs.getInt("profile_id"));
-//        profile.setUserId(rs.getInt("user_id"));
-//        profile.setName(rs.getString("name"));
-//        profile.setEmail(rs.getString("email"));
-//        profile.setGoals(rs.getString("goals"));
-//        return profile;
-//    }
+    private GymLog mapRowToGymLog(SqlRowSet rs) {
+        GymLog gymLog = new GymLog();
+        gymLog.setLogId(rs.getInt("log_id"));
+        gymLog.setUserId(rs.getInt("user_id"));
+        gymLog.setCheckIn(rs.getTimestamp("check_in"));
+        gymLog.setCheckOut(rs.getTimestamp("check_out"));
+        return gymLog;
+    }
 }
