@@ -65,8 +65,8 @@ public class Profile {
     @Override
     public String toString() {
         return "Profile{" +
-                "profileid=" + profileId +
-                ", userid=" + userId +
+                "profileId=" + profileId +
+                ", userId=" + userId +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", goals='" + goals + '\'' +

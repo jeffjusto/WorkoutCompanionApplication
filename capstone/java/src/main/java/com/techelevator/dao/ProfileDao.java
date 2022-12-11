@@ -13,4 +13,6 @@ public interface ProfileDao {
 
     List<Profile> findAll();
 
+    public Profile findProfileById(int userId);
+
 }

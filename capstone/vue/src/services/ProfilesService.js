@@ -9,6 +9,10 @@ export default {
         return http.get(`/profiles`);
     },
 
+    getProfile(id) {
+        return http.get(`/profiles/${id}`);
+    },
+
     create(profile) {
         return http.post(`/profiles`, profile);
     },

@@ -27,7 +27,7 @@ public class JdbcProfileDao implements ProfileDao {
     public List<Profile> findAll() {
         List<Profile> profiles = new ArrayList<>();
         try {
-            String sql = "select * from profile";
+            String sql = "SELECT * FROM profile";
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             System.out.println(results.toString());
             while (results.next()) {
@@ -38,6 +38,22 @@ public class JdbcProfileDao implements ProfileDao {
             System.out.println(e.getMessage());
         }
         return profiles;
+    }
+
+    @Override
+    public Profile findProfileById(int userId) {
+        Profile profile = new Profile();
+        try {
+            String sql = "SELECT * FROM profile " +
+                        "WHERE user_id = ?;";
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+            if (results.next()) {
+                profile = mapRowToProfile(results);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return profile;
     }
 
     @Override

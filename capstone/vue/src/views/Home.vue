@@ -10,9 +10,9 @@
       <div class="gym-log-div-container">
         <gym-log-div class="gym-log"></gym-log-div>
       </div>
-      <div id="update-profile" class="card" v-on:click="openForm">
+      <div id="view-profile" class="card" v-on:click="openProfile">
         <font-awesome-icon icon="fa-solid fa-user" size="6x" />
-        <h2>UPDATE PROFILE</h2>
+        <h2>VIEW MY PROFILE</h2>
       </div>
       <div class="card">
         <font-awesome-icon icon="fa-solid fa-heart" size="6x" />
@@ -51,6 +51,13 @@ export default {
     GymLogDiv
   },
   methods: {
+    openProfile() {
+      this.$router.push({
+        name: 'my-profile',
+        params:{ profileId: this.$store.state.user.id }
+      });
+    },
+
     openForm() {
       this.$router.push({name: 'updateProfile'});
     },

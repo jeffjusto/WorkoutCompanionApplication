@@ -1,7 +1,7 @@
 
 <template>
   <div class="card-container">
-      <profile-card v-for="profile in profiles" v-bind:key="profile.profileId" v-bind:profile="profile" />
+      <profile-card v-bind:profile="profile" />
   </div>
 </template>
 
@@ -10,21 +10,22 @@ import ProfileCard from '../components/ProfileCard.vue';
 import ProfilesService from '../services/ProfilesService'
 
 export default {
-    name: 'profiles',
+    name: 'myProfile',
     components: {
         ProfileCard
     },
     data() {
         return {
-            profiles: []
+            profile: {}
         }
     },
     created() {
-        ProfilesService.getAll().then(response => {
-            this.profiles = response.data;
+        ProfilesService.getProfile(this.$store.state.user.id).then(response => {
+            this.profile = response.data;
         });
     }
 }
+
 </script>
 
 <style>

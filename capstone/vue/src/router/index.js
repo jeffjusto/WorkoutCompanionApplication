@@ -10,6 +10,7 @@ import UpdateProfile from '../views/UpdateProfile'
 import EquipmentList from '../views/EquipmentList'
 import GymLog from '../views/GymLog'
 import Calendar from '../views/Calendar'
+import MyProfile from '../views/MyProfile'
 
 Vue.use(Router)
 
@@ -62,6 +63,14 @@ const router = new Router({
       path: "/profiles",
       name: "profiles",
       component: Profiles,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/profiles/:profileId",
+      name: "my-profile",
+      component: MyProfile,
       meta: {
         requiresAuth: true
       }

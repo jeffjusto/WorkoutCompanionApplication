@@ -4,7 +4,7 @@
              <div class="img-container">
                 <img src="https://www.pngkey.com/png/full/787-7877336_rand-romas-circular-headshot-gentleman.png" alt="photo">
             </div>
-            <h3 class="account-id grey-text">Account ID# {{ profile.profileid }}</h3>
+            <h3 class="account-id grey-text">Account ID# {{ profile.profileId }}</h3>
             <h3 class="white-text heavy">{{ profile.name }}</h3>
             <h3 class="grey-text light">{{ profile.email }}</h3>
             <h3 class="white-text">{{ profile.goals }}</h3>
@@ -13,7 +13,7 @@
         <div class="profile-metrics">
             <div class="metric-container">
                 <div class="metric-graphic color-a">
-                    <h3>300 minutes this week</h3>
+                    <h3>200 minutes this week</h3>
                 </div>
             </div>
             <div class="metric-container">
