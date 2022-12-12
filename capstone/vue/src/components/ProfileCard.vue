@@ -1,9 +1,10 @@
 <template>
     <div class="card">
+        <div>
+            <avatar-input/>
+        </div>
         <div class="profile-info">
-             <div class="img-container">
-                <img src="https://www.pngkey.com/png/full/787-7877336_rand-romas-circular-headshot-gentleman.png" alt="photo">
-            </div>
+            
             <h3 class="account-id grey-text">Account ID# {{ profile.profileid }}</h3>
             <h3 class="white-text heavy">{{ profile.name }}</h3>
             <h3 class="grey-text light">{{ profile.email }}</h3>
@@ -31,9 +32,11 @@
 </template>
 
 <script>
+import AvatarInput from './AvatarInput.vue'
 
 
 export default {
+  components: { AvatarInput },
     name: 'profile',
     props: ['profile']
 }
