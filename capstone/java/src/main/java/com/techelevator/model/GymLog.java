@@ -12,6 +12,8 @@ public class GymLog {
     private int userId;
     private Date checkIn;
     private Date checkOut;
+    private String difference;
+
 
     public GymLog() {
     }
@@ -67,19 +69,13 @@ public class GymLog {
                 '}';
     }
 
+    public String getDifference() {
+        return difference;
+    }
+
+    public void setDifference(String difference) {
+        String[] differenceArray = difference.split(" ");
+        difference = differenceArray[6]+" "+differenceArray[7]+" "+differenceArray[8]+" "+differenceArray[9];
+        this.difference = difference;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

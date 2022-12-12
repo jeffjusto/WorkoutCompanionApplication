@@ -3,7 +3,8 @@
         <h2>{{ gymLog.logId }}</h2>
         <h2>{{ gymLog.userId }}</h2> 
         <h2>{{ gymLog.checkIn }}</h2> 
-        <h2>{{ gymLog.checkOut }}</h2> 
+        <h2>{{ gymLog.checkOut }}</h2>
+        <h2>{{ gymLog.difference }}</h2>  
     </div>
 </template>
 

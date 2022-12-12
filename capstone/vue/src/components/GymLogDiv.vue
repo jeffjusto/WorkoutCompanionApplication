@@ -18,6 +18,7 @@ export default {
                 userId: this.$store.state.user.id,
                 checkIn: "",
                 checkOut: "",
+                difference: ""
             }
         }
        

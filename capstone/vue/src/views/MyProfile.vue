@@ -1,8 +1,10 @@
 
 <template>
-  <div class="card-container">
-      <profile-card v-bind:profile="profile" />
-  </div>
+    <div>
+        <profile-card v-bind:profile="profile" />
+        <button id="btn-edit-profile" v-on:click="openUpdateProfile">EDIT PROFILE</button>
+    </div>
+ 
 </template>
 
 <script>
@@ -10,7 +12,7 @@ import ProfileCard from '../components/ProfileCard.vue';
 import ProfilesService from '../services/ProfilesService'
 
 export default {
-    name: 'myProfile',
+    name: 'my-profile',
     components: {
         ProfileCard
     },
@@ -21,8 +23,13 @@ export default {
     },
     created() {
         ProfilesService.getProfile(this.$store.state.user.id).then(response => {
-            this.profile = response.data;
+            this.profile = {...response.data};
         });
+    },
+    methods: {
+        openUpdateProfile() {
+             this.$router.push({name: 'updateProfile'});
+        }
     }
 }
 
