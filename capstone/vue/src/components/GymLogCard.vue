@@ -1,10 +1,24 @@
 <template>
     <div class="card">
-        <h2>{{ gymLog.logId }}</h2>
-        <h2>{{ gymLog.userId }}</h2> 
-        <h2>{{ gymLog.checkIn }}</h2> 
-        <h2>{{ gymLog.checkOut }}</h2>
-        <h2>{{ gymLog.difference }}</h2>  
+        <div class="session-id">
+            <h2>Session ID</h2>
+            <h3>{{ gymLog.logId }}</h3>
+        </div>
+        <hr>
+        <div class="user-id">
+            <h2>User ID</h2> 
+            <h3>{{ gymLog.userId }}</h3>
+        </div>
+        <hr>
+        <div class="date">
+            <h2>Date</h2>
+            <h3>{{ gymLog.checkIn.substring(0, 10) }}</h3> 
+        </div>
+        <hr>
+        <div class="duration">
+            <h2>Duration</h2>
+            <h2>{{ gymLog.difference }}</h2>  
+        </div>
     </div>
 </template>
 
@@ -17,11 +31,7 @@ export default {
 }
 </script>
 
-<style>
-img {
-    max-height: 100%;
-    max-width: 100%;
-}
+<style scoped>
 
 hr {
     border-color:#7C8097;
@@ -29,69 +39,16 @@ hr {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     background-color: #31394D;
     border-radius: 6px;
-    height: 500px;
-    width: 300px;
     margin: 20px;
-    padding: 40px 20px 20px 20px;
-    text-align: center;
+    padding: 20px;
+    text-align: left;
     box-shadow: 0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     font-family: Arial, Helvetica, sans-serif;
     color: #FFFFFF;
-}
-
-.img-container {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-metrics {
-    display: flex;
-    justify-content: space-around;
-}
-
-.white-text {
-    color: #FFFFFF;
-}
-
-.grey-text {
-    color:#7C8097;
-}
-
-.heavy {
-    font-weight: 300;
-    font-size: 2em;
-}
-
-.metric-container h3 {
-    color:#FFFFFF;
-    text-align: center;
-}
-
-.metric-graphic {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.color-a {
-    background: linear-gradient(to top right, #8162CE, #F54BA5);
-}
-
-.color-b {
-    background: linear-gradient(to bottom right, #C90A6D, #FF48A0);
-}
-
-.color-c {
-    background: linear-gradient(to bottom right, #5E5AEC, #3F9EFC);
 }
 </style>

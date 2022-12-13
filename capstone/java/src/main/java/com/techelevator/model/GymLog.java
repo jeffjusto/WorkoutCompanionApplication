@@ -6,8 +6,6 @@ import java.util.Date;
 
 public class GymLog {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
-
     private int logId;
     private int userId;
     private Date checkIn;
@@ -18,11 +16,12 @@ public class GymLog {
     public GymLog() {
     }
 
-    public GymLog(int logId, int userId, Timestamp checkIn, Timestamp checkOut) {
+    public GymLog(int logId, int userId, Timestamp checkIn, Timestamp checkOut, String difference) {
         this.logId = logId;
         this.userId = userId;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
+        this.difference = difference;
     }
 
     public int getLogId() {
@@ -59,6 +58,16 @@ public class GymLog {
         this.checkOut = checkOut;
     }
 
+    public String getDifference() {
+        return difference;
+    }
+
+    public void setDifference(String difference) {
+        String[] differenceArray = difference.split(" ");
+//        difference = differenceArray[6] + " " + differenceArray[7] + " " + differenceArray[8] + " " + differenceArray[9];
+        this.difference = differenceArray[0];
+    }
+
     @Override
     public String toString() {
         return "GymLog{" +
@@ -66,16 +75,7 @@ public class GymLog {
                 ", userId=" + userId +
                 ", checkIn=" + checkIn +
                 ", checkOut=" + checkOut +
+                ", difference='" + difference + '\'' +
                 '}';
-    }
-
-    public String getDifference() {
-        return difference;
-    }
-
-    public void setDifference(String difference) {
-        String[] differenceArray = difference.split(" ");
-        difference = differenceArray[6]+" "+differenceArray[7]+" "+differenceArray[8]+" "+differenceArray[9];
-        this.difference = difference;
     }
 }

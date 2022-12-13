@@ -23,7 +23,7 @@ public class JdbcEquipmentDao implements EquipmentDao {
     public List<Equipment> listAll() {
         List<Equipment> equipmentList = new ArrayList<>();
         try {
-            String sql = "SELECT equipment_id, equipment_name, description, img_src " +
+            String sql = "SELECT equipment_id, equipment_name, description, img_src, instruction_src " +
                     "FROM equipment;";
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             System.out.println(results.toString());
@@ -37,12 +37,31 @@ public class JdbcEquipmentDao implements EquipmentDao {
         return equipmentList;
     }
 
+    @Override
+    public String getInstructionByEquipmentId(int equipmentId) {
+        String instructions = "";
+        try {
+            String sql = "SELECT * " +
+                    "FROM equipment " +
+                    "WHERE equipment_id = ?;" ;
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, equipmentId);
+            while (results.next()) {
+                Equipment equipment = mapRowToEquipment(results);
+                instructions = equipment.getInstructionSrc();
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return instructions;
+    };
+
     private Equipment mapRowToEquipment(SqlRowSet rs) {
         Equipment equipment = new Equipment();
         equipment.setId(rs.getInt("equipment_id"));
         equipment.setName(rs.getString("equipment_name"));
         equipment.setDescription(rs.getString("description"));
         equipment.setImgSrc(rs.getString("img_src"));
+        equipment.setInstructionSrc(rs.getString("instruction_src"));
         return equipment;
     }
 }

@@ -9,12 +9,19 @@
 </template>
 
 <style>
-  #app {
-    background-color: #E2E1E0;
-    /* background-image: url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh; */
+  html {
 
+    background-image: url(https://i.stack.imgur.com/sBoeM.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
   }
+
+  nav {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  a:hover { text-decoration: none; color:yellow; }
+a:focus { text-decoration: none; color:orange; }
+a:active { text-decoration: none; color:teal; }
 </style>

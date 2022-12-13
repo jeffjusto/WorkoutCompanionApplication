@@ -10,6 +10,10 @@ export default {
         return http.get(`/gymLog`);
     },
 
+    getAllById(id) {
+        return http.get(`/gymLog/${id}`);
+    },
+
     create(gymLog) {
         return http.post(`/gymLog`, gymLog);
     },

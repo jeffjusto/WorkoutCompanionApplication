@@ -19,7 +19,7 @@ export default {
         }
     },
     created() {
-        GymLogService.getAll().then(response => {
+        GymLogService.getAllById(this.$store.state.user.id).then(response => {
             this.gymLogs = response.data;
         });
     }

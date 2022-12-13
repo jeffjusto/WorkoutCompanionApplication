@@ -26,6 +26,9 @@ public class GymLogController {
     @RequestMapping(path = "/gymLog", method = RequestMethod.GET)
     public List<GymLog> getAll() { return dao.getAll();}
 
+    @RequestMapping(path = "/gymLog/{userId}", method = RequestMethod.GET)
+    public List<GymLog> getAllById(@PathVariable int userId) { return dao.getAllById(userId);}
+
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/gymLog", method = RequestMethod.POST)
     public void createGymLogEvent(@RequestBody GymLog gymLog) {
@@ -36,4 +39,12 @@ public class GymLogController {
         }
     }
 
+    @RequestMapping(path = "/gymLog", method = RequestMethod.PUT)
+    public void updateDifference() {
+        try {
+            dao.updateDifference();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

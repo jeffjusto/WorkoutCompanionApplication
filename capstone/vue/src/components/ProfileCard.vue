@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 img {
     max-height: 100%;
     max-width: 100%;

@@ -6,14 +6,16 @@ public class Equipment {
     private String name;
     private String description;
     private String imgSrc;
+    private String instructionSrc;
 
     public Equipment() {}
 
-    public Equipment(int id, String name, String description, String imgSrc) {
+    public Equipment(int id, String name, String description, String imgSrc, String instructionSrc) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.imgSrc = imgSrc;
+        this.instructionSrc = instructionSrc;
     }
 
     public int getId() {
@@ -48,6 +50,14 @@ public class Equipment {
         this.imgSrc = imgSrc;
     }
 
+    public String getInstructionSrc() {
+        return instructionSrc;
+    }
+
+    public void setInstructionSrc(String instructionSrc) {
+        this.instructionSrc = instructionSrc;
+    }
+
     @Override
     public String toString() {
         return "Equipment{" +
@@ -55,6 +65,7 @@ public class Equipment {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", imgSrc='" + imgSrc + '\'' +
+                ", instructionSrc='" + instructionSrc + '\'' +
                 '}';
     }
 }

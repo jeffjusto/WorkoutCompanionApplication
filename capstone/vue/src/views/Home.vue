@@ -8,7 +8,9 @@
    
     <div class="card-container">
       <div class="gym-log-div-container">
-        <gym-log-div class="gym-log"></gym-log-div>
+        <gym-log-div class="gym-log">
+          <font-awesome-icon icon="fa-solid fa-stopwatch" size="6x" />
+        </gym-log-div>
       </div>
       <div id="view-profile" class="card" v-on:click="openProfile">
         <font-awesome-icon icon="fa-solid fa-user" size="6x" />
@@ -87,7 +89,7 @@ export default {
   }
 
   .title {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
   }
 

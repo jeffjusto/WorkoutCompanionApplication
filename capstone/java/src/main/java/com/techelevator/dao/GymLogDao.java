@@ -8,6 +8,10 @@ public interface GymLogDao {
 
     List<GymLog> getAll();
 
+    List<GymLog> getAllById(int userId);
+
     void createGymLogEvent(GymLog gymLog);
+
+    public List<String> updateDifference();
 
 }

@@ -3,10 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.EquipmentDao;
 import com.techelevator.model.Equipment;
 import com.techelevator.model.Profile;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +20,11 @@ public class EquipmentController {
     @RequestMapping(path = "/equipment", method = RequestMethod.GET)
     public List<Equipment> listAll() {
         return equipmentDao.listAll();
+    }
+
+    @RequestMapping(path = "/equipment/{equipmentId}/instruction", method = RequestMethod.GET)
+    public String getInstructionByEquipmentId(@PathVariable int equipmentId) {
+        return equipmentDao.getInstructionByEquipmentId(equipmentId);
     }
 
 

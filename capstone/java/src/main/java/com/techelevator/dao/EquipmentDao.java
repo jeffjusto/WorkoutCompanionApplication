@@ -8,4 +8,6 @@ public interface EquipmentDao {
 
     List<Equipment> listAll();
 
+    String getInstructionByEquipmentId(int id);
+
 }

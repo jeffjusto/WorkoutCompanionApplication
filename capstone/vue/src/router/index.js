@@ -92,7 +92,7 @@ const router = new Router({
       }
     },
     {
-      path: "/gymLog",
+      path: "/gymLog/:userId",
       name: "gymLog",
       component: GymLog,
       meta: {
