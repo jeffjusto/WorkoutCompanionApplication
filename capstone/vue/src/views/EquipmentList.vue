@@ -33,6 +33,5 @@ export default {
         flex-wrap: wrap;
         justify-content: space-around;
         margin: auto;
-
     }
 </style>

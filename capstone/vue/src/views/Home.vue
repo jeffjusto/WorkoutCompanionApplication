@@ -72,8 +72,11 @@ export default {
       this.$router.push({name: 'equipment'});
     },
 
-     openGymLog() {
-      this.$router.push({name: 'gymLog'});
+    openGymLog() {
+      this.$router.push({
+        name: 'gymLog',
+        params:{ userId: this.$store.state.user.id }
+        });
     },
     openCalendar(){
       this.$router.push({name: 'calendar'});

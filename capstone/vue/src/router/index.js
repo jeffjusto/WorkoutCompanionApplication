@@ -11,6 +11,7 @@ import EquipmentList from '../views/EquipmentList'
 import GymLog from '../views/GymLog'
 import Calendar from '../views/Calendar'
 import MyProfile from '../views/MyProfile'
+import Schedule from '../views/Schedule'
 
 Vue.use(Router)
 
@@ -103,6 +104,14 @@ const router = new Router({
       path: "/calendar",
       name: "calendar",
       component: Calendar,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/calendar/schedule",
+      name: "schedule",
+      component: Schedule,
       meta: {
         requiresAuth: true
       }

@@ -35,7 +35,8 @@ export default {
     }
 
     img {
-        max-height: 50%;
+        width: 80%;
+        height: auto;
     }
 
     img:hover {

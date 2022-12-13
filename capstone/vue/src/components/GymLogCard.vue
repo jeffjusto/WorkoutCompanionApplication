@@ -1,23 +1,23 @@
 <template>
     <div class="card">
         <div class="session-id">
-            <h2>Session ID</h2>
-            <h3>{{ gymLog.logId }}</h3>
+            <h2 class="color-a">Session ID</h2>
+            <h3 class="color-a">{{ gymLog.logId }}</h3>
         </div>
-        <hr>
-        <div class="user-id">
-            <h2>User ID</h2> 
-            <h3>{{ gymLog.userId }}</h3>
-        </div>
+        <!-- <hr> -->
+        <!-- <div class="user-id">
+            <h2 class="color-a">User ID</h2> 
+            <h3 class="color-a">{{ gymLog.userId }}</h3>
+        </div> -->
         <hr>
         <div class="date">
-            <h2>Date</h2>
-            <h3>{{ gymLog.checkIn.substring(0, 10) }}</h3> 
+            <h2 class="color-b">Date</h2>
+            <h3 class="color-b">{{ gymLog.checkIn.substring(0, 10) }}</h3> 
         </div>
         <hr>
-        <div class="duration">
-            <h2>Duration</h2>
-            <h2>{{ gymLog.difference }}</h2>  
+        <div class="duration color-c">
+            <h2 class="color-c">Duration</h2>
+            <h2 class="color-c">{{ gymLog.difference }}</h2>  
         </div>
     </div>
 </template>
@@ -32,6 +32,13 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+    margin-left: 10px;
+}
+
+h3 {
+    margin-left: 10px;
+}
 
 hr {
     border-color:#7C8097;
@@ -43,12 +50,25 @@ hr {
     flex-direction: column;
     background-color: #31394D;
     border-radius: 6px;
-    margin: 20px;
+    width: 230px;
+    margin: 10px;
     padding: 20px;
     text-align: left;
     box-shadow: 0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     font-family: Arial, Helvetica, sans-serif;
     color: #FFFFFF;
+}
+
+.color-a {
+    color: #8162CE;
+}
+
+.color-b {
+    color: #C90A6D;
+}
+
+.color-c {
+    color: #5E5AEC;
 }
 </style>

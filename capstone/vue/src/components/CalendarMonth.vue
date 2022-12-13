@@ -129,7 +129,58 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+/* Merge Fix */
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2C3E50;
+  margin-top: 60px;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+  --grey-100: #E4E9F0;
+  --grey-200: #CFD7E3;
+  --grey-300: #B5C0CD;
+  --grey-800: #3E4E63;
+  --grid-gap: 1px;
+  --day-label-size: 20px;
+}
+
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.calendar-month {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calendar-month-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+}
+.button{
+  align-items: center;
+  gap: 50px;
+  background-color: whitesmoke;
+  border-color: thistle;
+  height: 50px;
+  width: 50px;
+  margin: 50px;
+  padding: 50px 50px 50px 50px;
+}
+
+/* Original */
 .calendar-month {
   position: relative;
   background-color: var(--grey-200);
@@ -162,6 +213,4 @@ export default {
   grid-row-gap: var(--grid-gap);
   border-top: solid 1px var(--grey-200);
 }
-
-
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="card-container">
         <gym-log-card v-for="gymLog in gymLogs" v-bind:key="gymLog.logId" v-bind:gymLog="gymLog"></gym-log-card>
     </div>
 </template>
@@ -26,13 +26,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .card-container {
         width: 80%;
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
         margin: auto;
-
     }
 </style>
