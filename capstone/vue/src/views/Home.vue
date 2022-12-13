@@ -20,7 +20,7 @@
         <font-awesome-icon icon="fa-solid fa-heart" size="6x" />
         <h2>VIEW MY METRICS</h2>
       </div>
-      <div class="card">
+      <div class="card" v-on:click="openCalendar">
         <font-awesome-icon icon="fa-solid fa-calendar-days" size="6x" />
         <h2>VIEW CALENDER</h2>
       </div>
@@ -74,6 +74,9 @@ export default {
 
      openGymLog() {
       this.$router.push({name: 'gymLog'});
+    },
+    openCalendar(){
+      this.$router.push({name: 'calendar'});
     }
   }
 };

@@ -4,6 +4,7 @@
         <span @click="selectCurrent">Today</span>
         <span @click="selectNext">&#62;</span>
     </div>
+    
 </template>
 
 <script>
