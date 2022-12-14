@@ -22,6 +22,7 @@ export default {
         EquipmentService.getAll().then(response => {
             this.equipmentList = response.data;
         });
+        this.$store.commit("SET_EQUIPMENT_LIST", this.equipmentList);
     }
 }
 </script>

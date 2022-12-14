@@ -6,10 +6,7 @@
         <img :src="src" alt="" >
     
         <div >
-        <button @click="browse()" type="button" class="button">
-            
-            
-        </button>
+        <!-- <button @click="browse()" type="button" class="button"></button> -->
         
         </div>
         </div>

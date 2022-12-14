@@ -22,7 +22,11 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     isInSession: false,
-    gymLogCheckIn: ""
+    gymLogCheckIn: "",
+    isEquipmentInSession: false,
+    equipmentCheckIn: "",
+    equipmentListArray: [],
+    currentEquipmentId: "",
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -46,6 +50,26 @@ export default new Vuex.Store({
     },
     SET_GYM_LOG_CHECK_IN(state, checkIn) {
       state.gymLogCheckIn = checkIn;
+    },
+    SET_EQUIPMENT_LOG_SESSION(state, equipmentId) {
+      for (let i = 0; i < state.equipmentListArray.length; i++) {
+        if(state.equipmentListArray[i].equipmentId === equipmentId) {
+          state.isEquipmentInSession = !state.isEquipmentInSession;
+        }
+      }
+    },
+    SET_CURRENT_EQUIPMENT_ID(state, equipmentId) {
+      for (let i = 0; i < state.equipmentListArray.length; i++) {
+        if(state.equipmentListArray[i].equipmentId === equipmentId) {
+          state.currentEquipmentId = equipmentId;
+        }
+      }
+    },
+    SET_EQUIPMENT_LOG_CHECK_IN(state, checkIn) {
+      state.equipmentCheckIn = checkIn;
+    },
+    SET_EQUIPMENT_LIST(state, equipmentList) {
+      state.equipmentListArray = equipmentList;
     }
   }
 })

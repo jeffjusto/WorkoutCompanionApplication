@@ -24,8 +24,8 @@ public class JdbcEquipmentLogDao implements EquipmentLogDao {
         try {
             String sql = "INSERT INTO equipment_log (entry_id, user_id, equipment_id, equipment_check_in, equipment_check_out, equipment_time_interval, weight,reps)" +
                     "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?);";
-            jdbcTemplate.update(sql,equipmentLog.getUserId(),equipmentLog.getEquipmentId(),equipmentLog.getEquipmentCheckIn(),
-                    equipmentLog.getEquipmentCheckOut(),equipmentLog.getEquipmentTimeInterval(), equipmentLog.getWeight(),
+            jdbcTemplate.queryForRowSet(sql, equipmentLog.getUserId(), equipmentLog.getEquipmentId(), equipmentLog.getEquipmentCheckIn(),
+                    equipmentLog.getEquipmentCheckOut(), equipmentLog.getEquipmentTimeInterval(), equipmentLog.getWeight(),
                     equipmentLog.getReps());
         } catch (Exception e) {
             System.out.println(e.getMessage());

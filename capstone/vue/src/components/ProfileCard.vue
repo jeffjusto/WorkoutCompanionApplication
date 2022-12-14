@@ -4,9 +4,12 @@
             <div class="img-container">
                 <avatar-input/>
             </div>
-            <h3 class="account-id grey-text">Account ID# {{ profile.profileid }}</h3>
+            <h3 class="account-id grey-text">Account ID# {{ profile.profileId }}</h3>
+            <hr>
             <h3 class="white-text heavy">{{ profile.name }}</h3>
+            <hr>
             <h3 class="grey-text light">{{ profile.email }}</h3>
+            <hr>
             <h3 class="white-text">{{ profile.goals }}</h3>
         </div>
     </div>

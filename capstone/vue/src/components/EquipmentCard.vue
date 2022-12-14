@@ -3,7 +3,7 @@
         <img v-bind:src="showImage ? equipment.imgSrc : equipment.instructionSrc" v-bind:alt="equipment.name" v-on:click="toggleImg">
         <h3>{{ equipment.name }}</h3>
         <p>{{ equipment.description }}</p>
-        <button class="btn">Check into this machine</button>
+        <button class="btn inactive" v-on:click.prevent="setCheckInTimestamp">Check into this machine</button>
     </div>
 </template>
 
@@ -20,9 +20,16 @@ export default {
     methods: {
         toggleImg() {
             this.showImage = !this.showImage;
-        }
+        },
+        setCheckInTimestamp() {
+            this.$store.commit("SET_EQUIPMENT_LOG_SESSION", this.equipmentId);
+            this.$store.commit("SET_EQUIPMENT_LOG_CHECK_IN", Date.now());
+            this.$router.push({name: 'equipmentLog'});
+            this.$store.commit("SET_CURRENT_EQUIPMENT_ID", this.equipmentId);
+         }
     }
 }
+
 </script>
 
 <style scoped>
@@ -74,5 +81,13 @@ export default {
     .btn:hover{
         cursor: pointer;
         transform: scale(1.02);
+    }
+
+    .active {
+        background: linear-gradient(to bottom right, #5E5AEC, #3F9EFC);
+    }
+
+    .inactive {
+        background: linear-gradient(to top right, #8162CE, #F54BA5);
     }
 </style>

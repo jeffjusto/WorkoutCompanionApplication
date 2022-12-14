@@ -12,6 +12,7 @@ import GymLog from '../views/GymLog'
 import Calendar from '../views/Calendar'
 import MyProfile from '../views/MyProfile'
 import Schedule from '../views/Schedule'
+import EquipmentLog from '../views/EquipmentLog'
 
 Vue.use(Router)
 
@@ -115,7 +116,15 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
-    }
+    },
+    {
+      path: "/equipmentLog",
+      name: "equipmentLog",
+      component: EquipmentLog,
+      meta: {
+        requiresAuth: true
+      }
+    },
   ]
 })
 
