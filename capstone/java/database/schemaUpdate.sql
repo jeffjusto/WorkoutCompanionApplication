@@ -94,6 +94,21 @@ VALUES (3, '2018-03-29T13:34:00.000Z', '2018-03-29T14:35:00.000Z', null),
 
 UPDATE gym_log set difference = age(check_out,check_in);
 
+CREATE TABLE IF NOT EXISTS public.equipment_log
+(
+entry_id SERIAL,
+user_id integer,
+equipment_check_in timestamp,
+equipment_check_out timestamp,
+equipment_time_interval integer,
+equipment_id integer,
+weight integer,
+reps integer,
+
+CONSTRAINT PK_equipment_log_id PRIMARY KEY (entry_id),
+CONSTRAINT FK_equipment_id FOREIGN KEY (equipment_id) REFERENCES equipment (equipment_id),
+CONSTRAINT FK_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
 
 COMMIT TRANSACTION;
 

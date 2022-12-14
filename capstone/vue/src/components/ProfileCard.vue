@@ -9,25 +9,7 @@
             <h3 class="grey-text light">{{ profile.email }}</h3>
             <h3 class="white-text">{{ profile.goals }}</h3>
         </div>
-        <hr>
-        <div class="profile-metrics">
-            <div class="metric-container">
-                <div class="metric-graphic color-a">
-                    <h3>200 minutes this week</h3>
-                </div>
-            </div>
-            <div class="metric-container">
-                <div class="metric-graphic color-b">
-                    <h3>XXX steps this month</h3>
-                </div>
-            </div>
-            <div class="metric-container">
-                <div class="metric-graphic color-c">
-                    <h3>XXX lbs lost</h3>
-                </div>
-            </div> 
-        </div>
-  </div>
+    </div>
 </template>
 
 <script>

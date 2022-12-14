@@ -132,4 +132,9 @@ export default {
     transform: scale(1.05);
     cursor: pointer;
   }
+
+  .gym-log-div:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 </style>

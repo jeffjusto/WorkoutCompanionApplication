@@ -30,14 +30,12 @@ export default {
     },
     methods: {
         setCheckInTimestamp() {
-            this.gymLog.checkIn = Date.now();
             this.$store.commit("SET_GYM_LOG_SESSION");
             this.$store.commit("SET_GYM_LOG_CHECK_IN", Date.now());
         },
         setCheckOutTimestamp() {
             this.gymLog.checkOut = Date.now();
-            this.gymLog.difference = differenceInMinutes(this.gymLog.checkOut, this.gymLog.checkIn)
-            console.log( this.gymLog.difference);
+            this.gymLog.difference = differenceInMinutes(this.gymLog.checkOut, this.gymLog.checkIn);
             GymLogService.create(this.gymLog);
             this.gymLog = {
                 logId: 0,
