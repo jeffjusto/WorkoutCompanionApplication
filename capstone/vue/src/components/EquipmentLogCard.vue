@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="session-id">
-            <h2 class="color-a">Session ID: {{ gymLog.logId }}</h2>
+            <h2 class="color-a">Log ID: {{ equipmentLog.entryId }}</h2>
         </div>
         <!-- <hr> -->
         <!-- <div class="user-id">
@@ -10,13 +10,18 @@
         </div> -->
         <hr>
         <div class="date">
-            <h2 class="color-b">Date: {{ gymLog.checkIn.substring(0, 10) }}</h2>
+            <h2 class="color-b">Date: {{ equipmentLog.equipmentCheckIn.substring(0, 10) }}</h2>
         </div>
         <hr>
         <div class="duration color-c">
-            <h2 class="color-c">Duration: {{ gymLog.difference }} minutes</h2>
+            <h2 class="color-c">Duration: {{ equipmentLog.equipmentTimeInterval }} minutes</h2>
         </div>
         <hr>
+        <div class="weight-reps color-a">
+            <h2 class="color-a">Machine: {{ equipmentLog.equipmentId }}</h2>
+            <h2 class="color-a">Weight: {{ equipmentLog.weight }}</h2>
+            <h2 class="color-a">Reps: {{ equipmentLog.reps }}</h2>
+        </div>
     </div>
 </template>
 
@@ -24,8 +29,9 @@
 
 
 export default {
-    name: 'gymLog',
-    props: ['gymLog']
+
+    name: 'equipment-log-card',
+    props: ['equipmentLog']
 }
 </script>
 

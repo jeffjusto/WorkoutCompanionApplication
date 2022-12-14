@@ -110,6 +110,16 @@ CONSTRAINT FK_equipment_id FOREIGN KEY (equipment_id) REFERENCES equipment (equi
 CONSTRAINT FK_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
+INSERT INTO equipment_log (user_id, equipment_id, equipment_check_in, equipment_check_out, equipment_time_interval, weight, reps)
+VALUES (3, 1, '2022-12-13 09:30:00.000', '2022-12-13 10:30:00.000', 60, 100, 6),
+(3, 4, '2022-12-12 08:30:00.000', '2022-12-12 9:30:00.000', 60, 100, 6),
+(3, 5, '2022-12-10 09:30:00.000', '2022-12-10 11:00:00.000', 90, 250, 4),
+(3, 7, '2022-12-11 09:30:00.000', '2022-12-11 10:00:00.000', 30, 200, 6),
+(3, 7, '2022-12-08 09:30:00.000', '2022-12-08 10:00:00.000', 30, 195, 7),
+(3, 8, '2022-12-09 10:30:00.000', '2022-12-09 11:00:00.000', 30, 100, 4),
+(3, 2, '2022-12-06 09:30:00.000', '2022-12-06 10:30:00.000', 60, 200, 6),
+(3, 2, '2022-12-03 10:30:00.000', '2022-12-03 11:30:00.000', 60, 300, 5);
+
 COMMIT TRANSACTION;
 
 --CREATE TABLE IF NOT EXISTS public."Schedule"

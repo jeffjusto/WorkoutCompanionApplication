@@ -8,9 +8,9 @@
             <hr>
             <h3 class="white-text heavy">{{ profile.name }}</h3>
             <hr>
-            <h3 class="grey-text light">{{ profile.email }}</h3>
+            <h3 class="white-text light">{{ profile.email }}</h3>
             <hr>
-            <h3 class="white-text">{{ profile.goals }}</h3>
+            <p class="white-text">{{ profile.goals }}</p>
         </div>
     </div>
 </template>

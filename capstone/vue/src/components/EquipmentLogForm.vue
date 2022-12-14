@@ -26,7 +26,7 @@ export default {
       equipmentLog: {
         entryId: 0,
         userId: this.$store.state.user.id,
-        equipmentId: this.$store.state.currentMachineId,
+        equipmentId: 1,
         equipmentCheckIn: this.$store.state.equipmentCheckIn,
         equipmentCheckOut: "",
         equipmentTimeInterval: "",
@@ -53,7 +53,7 @@ export default {
       this.equipmentLog = {
         entryId: 0,
         userId: this.$store.state.user.id,
-        equipmentId: this.equipmentId,
+        equipmentId: this.equipmentLog.equipmentId,
         equipmentCheckIn: "",
         equipmentCheckOut: "",
         equipmentTimeInterval: "",

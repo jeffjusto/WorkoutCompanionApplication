@@ -6,6 +6,10 @@ const http = axios.create({
 
 export default {
 
+    getAllById(id) {
+        return http.get(`/equipmentLog/${id}`);
+    },
+
     create(equipmentLog) {
         return http.post(`/equipmentLog`, equipmentLog);
     }

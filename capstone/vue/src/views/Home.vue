@@ -16,7 +16,7 @@
         <font-awesome-icon icon="fa-solid fa-user" size="6x" />
         <h2>VIEW MY PROFILE</h2>
       </div>
-      <div class="card">
+      <div class="card" v-on:click="openMyMetrics">
         <font-awesome-icon icon="fa-solid fa-heart" size="6x" />
         <h2>VIEW MY METRICS</h2>
       </div>
@@ -76,6 +76,9 @@ export default {
     },
     openCalendar(){
       this.$router.push({name: 'calendar'});
+    },
+    openMyMetrics(){
+      this.$router.push({name: 'myMetrics'});
     }
   }
 };

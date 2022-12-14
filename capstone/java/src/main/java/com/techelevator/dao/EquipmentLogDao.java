@@ -9,8 +9,6 @@ public interface EquipmentLogDao {
 
     public void createEntry(EquipmentLog equipmentLog);
 
-    public void updateEntry(EquipmentLog equipmentLog);
-
     public List<EquipmentLog> getEntriesByUserId(int userId);
 
 }

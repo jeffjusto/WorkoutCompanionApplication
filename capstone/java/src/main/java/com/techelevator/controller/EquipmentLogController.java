@@ -6,6 +6,9 @@ import com.techelevator.model.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @RestController
 @CrossOrigin
@@ -15,6 +18,17 @@ public class EquipmentLogController {
 
     public EquipmentLogController(EquipmentLogDao equipmentLogDao) {
         this.equipmentLogDao = equipmentLogDao;
+    }
+
+    @RequestMapping(path = "/equipmentLog/{user_id}", method = RequestMethod.GET)
+    public List<EquipmentLog> getEntries(@PathVariable int user_id) {
+        List<EquipmentLog> equipmentLogs = new ArrayList<>();
+        try {
+            equipmentLogs = equipmentLogDao.getEntriesByUserId(user_id);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return equipmentLogs;
     }
 
     @ResponseStatus(HttpStatus.CREATED)
