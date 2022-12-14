@@ -78,6 +78,19 @@ public class JdbcProfileDao implements ProfileDao {
         return true;
     }
 
+    @Override
+    public boolean updateProfileImg(String profileImg, int userId) {
+        try {
+            String sql = "UPDATE profile " +
+                    "SET profile_img = ? " +
+                    "WHERE user_id = ?;" ;
+            jdbcTemplate.update(sql, profileImg, userId);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return true;
+    }
+
     private Profile mapRowToProfile(SqlRowSet rs) {
         Profile profile = new Profile();
         profile.setProfileId(rs.getInt("profile_id"));
@@ -85,6 +98,7 @@ public class JdbcProfileDao implements ProfileDao {
         profile.setName(rs.getString("name"));
         profile.setEmail(rs.getString("email"));
         profile.setGoals(rs.getString("goals"));
+        profile.setProfileImg(rs.getString("profile_img"));
         return profile;
     }
 }

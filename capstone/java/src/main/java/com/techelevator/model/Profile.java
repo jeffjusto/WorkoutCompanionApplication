@@ -8,18 +8,19 @@ public class Profile {
     private int userId;
     private String name;
     private String email;
-    //TODO Add Profile Picture
     private String goals;
+    private String profileImg;
 
     public Profile() {
     }
 
-    public Profile(int profileId, int userId, String name, String email, String goals) {
+    public Profile(int profileId, int userId, String name, String email, String goals, String profileImg) {
         this.profileId = profileId;
         this.userId = userId;
         this.name = name;
         this.email = email;
         this.goals = goals;
+        this.profileImg = profileImg;
     }
 
     public int getProfileId() {
@@ -62,6 +63,14 @@ public class Profile {
         this.goals = goals;
     }
 
+    public String getProfileImg() {
+        return profileImg;
+    }
+
+    public void setProfileImg(String profileImg) {
+        this.profileImg = profileImg;
+    }
+
     @Override
     public String toString() {
         return "Profile{" +
@@ -70,6 +79,7 @@ public class Profile {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", goals='" + goals + '\'' +
+                ", profileImg='" + profileImg + '\'' +
                 '}';
     }
 }

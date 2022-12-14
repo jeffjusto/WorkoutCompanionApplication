@@ -62,4 +62,15 @@ public class ProfileController {
         }
         return true;
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/profiles/img/{userId}", method = RequestMethod.PUT)
+    public boolean updateProfileImg(@RequestBody Profile profile) {
+        try {
+            dao.updateProfileImg(profile.getProfileImg(), profile.getUserId());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return true;
+    }
 }

@@ -11,6 +11,8 @@ public interface ProfileDao {
 
     boolean updateProfile(Profile profile);
 
+    boolean updateProfileImg(String profileImg, int userId);
+
     List<Profile> findAll();
 
     public Profile findProfileById(int userId);

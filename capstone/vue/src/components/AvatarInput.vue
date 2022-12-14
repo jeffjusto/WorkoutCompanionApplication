@@ -1,10 +1,8 @@
 <template>
-    <div>
+    <div class="container">
         <input type="file" accept="image/" class="hidden" ref="file" @change="change">
-        <div class="relative inline-block">
-     
-        <img :src="src" alt="" >
-    
+        <div class="img-container">
+            <img :src="src" alt="">
         <div >
         <!-- <button @click="browse()" type="button" class="button"></button> -->
         
@@ -55,12 +53,30 @@ img {
     border-radius: 50%;
 }
 
-
 button {
+    align-items: center;
     text-align: center;
-    margin: auto;
     display: flex;
     display: grid;
 }
 
+input {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    
+    }
+
+  .btn:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
 </style>

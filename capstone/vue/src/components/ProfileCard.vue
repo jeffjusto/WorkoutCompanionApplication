@@ -2,7 +2,7 @@
     <div class="card">
         <div class="profile-info">
             <div class="img-container">
-                <avatar-input/>
+                <img v-bind:src="profile.profileImg" v-bind:alt="profile.name">
             </div>
             <h3 class="account-id grey-text">Account ID# {{ profile.profileId }}</h3>
             <hr>
@@ -16,11 +16,9 @@
 </template>
 
 <script>
-import AvatarInput from './AvatarInput.vue'
 
 
 export default {
-  components: { AvatarInput },
     name: 'profile',
     props: ['profile']
 }

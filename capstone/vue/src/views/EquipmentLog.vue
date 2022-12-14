@@ -1,7 +1,7 @@
 
 <template>
-    <div>
-        <equipment-log-form></equipment-log-form>
+    <div class="card-container">
+        <equipment-log-form />
     </div>
 </template>
 
@@ -31,14 +31,10 @@ export default {
 <style scoped>
     .card-container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .card {
-        margin-top: 100px;
-        transform: scale(1.2);
-    }
     .btn{
         margin-top: 100px;
         border:none;

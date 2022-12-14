@@ -1,18 +1,18 @@
 <template>
-    <form v-on:submit.prevent="logEntry()">
-      <div class="field">
-        <label for="name">Weight</label>
-        <input type="text" v-model="equipmentLog.weight">
-      </div>
-      <div class="field">
-        <label for="email">Reps</label>
-        <input type="text" v-model="equipmentLog.reps">
-      </div>
-      <div class="actions">
-        <button type="button" v-on:click="cancel()">Cancel</button>&nbsp;
-        <button type="submit">Log Workout</button>
-      </div>
-    </form>
+  <form class="card" v-on:submit.prevent="logEntry()">
+    <div class="field">
+      <label for="name">Weight</label>
+      <input type="text" v-model="equipmentLog.weight">
+    </div>
+    <div class="field">
+      <label for="email">Reps</label>
+      <input type="text" v-model="equipmentLog.reps">
+    </div>
+    <div class="actions">
+      <button class="btn" type="button" v-on:click="cancel()">Cancel</button>&nbsp;
+      <button class="btn" type="submit">Log Workout</button>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -68,24 +68,56 @@ export default {
 </script>
 
 <style scoped>
+  input {
+    display: flex;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 100%;
+    background-color: lightgray;
+  }
+
+  label {
+    color: #FFFFFF;
+  }
+
   .card {
-      background-color: #31394D;
-      border-radius: 6px;
-      height: 500px;
-      width: 300px;
-      margin: 20px;
-      padding: 40px 20px 20px 20px;
-      text-align: center;
-      box-shadow: 0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
-      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-      font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #31394D;
+    border-radius: 6px;
+    height: 500px;
+    width: 300px;
+    margin: 20px;
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+    box-shadow: 0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+  }
+
+  .btn{
+    margin-top: 100px;
+    border:none;
+    height:30px;
+    max-width: 300px;
+    color:#ffffff;
+    width:35%;
+    font-size:16px;
+    border-radius:10px;
+    box-shadow: 0 13px 26px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.16);
+    background: linear-gradient(to top right, #8162CE, #F54BA5);
+    }
+
+  .btn:hover{
+    cursor: pointer;
+    transform: scale(1.02);
   }
 </style>
-
- // saveProfile() {
-    //   this.$store.commit('SAVE_PROFILE', this.profile);
-    //   this.profile = {
-    //     name: '',
-    //     email: '',
-    //     goals: '',
-    // };
