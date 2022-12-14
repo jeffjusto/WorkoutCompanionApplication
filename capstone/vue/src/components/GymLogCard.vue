@@ -1,8 +1,7 @@
 <template>
     <div class="card">
         <div class="session-id">
-            <h2 class="color-a">Session ID</h2>
-            <h3 class="color-a">{{ gymLog.logId }}</h3>
+            <h2 class="color-a">Session ID: {{ gymLog.logId }}</h2>
         </div>
         <!-- <hr> -->
         <!-- <div class="user-id">
@@ -11,13 +10,18 @@
         </div> -->
         <hr>
         <div class="date">
-            <h2 class="color-b">Date</h2>
-            <h3 class="color-b">{{ gymLog.checkIn.substring(0, 10) }}</h3> 
+            <h2 class="color-b">Date: {{ gymLog.checkIn.substring(0, 10) }}</h2>
         </div>
         <hr>
         <div class="duration color-c">
-            <h2 class="color-c">Duration</h2>
-            <h2 class="color-c">{{ gymLog.difference }}</h2>  
+            <h2 class="color-c">Duration: {{ gymLog.difference }} minutes</h2>
+        </div>
+        <hr>
+        <div class="weight-reps color-a">
+            <h2 class="color-a">Machine: Lat Press</h2>
+            <h2 class="color-a">Weight: 115</h2>
+            <h2 class="color-a">Reps: 6</h2>
+
         </div>
     </div>
 </template>

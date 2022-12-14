@@ -9,6 +9,9 @@ VALUES ('nespinosa','$2a$10$kIqYBS.PY3sYg96F0TO0zeKMhAIL46gq6cAMhc7v4GeEa95zKNSG
 ('ichow','$2a$10$kIqYBS.PY3sYg96F0TO0zeKMhAIL46gq6cAMhc7v4GeEa95zKNSGe','ROLE_USER'),
 ('jparker','$2a$10$kIqYBS.PY3sYg96F0TO0zeKMhAIL46gq6cAMhc7v4GeEa95zKNSGe','ROLE_USER');
 
+--RUN AFTER PROFILE TABLE PERMISSIONS HAVE BEEN GRANTED
+GRANT USAGE, SELECT ON SEQUENCE profile_profile_id_seq TO final_capstone_appuser;
+
 BEGIN TRANSACTION;
 
 
@@ -51,6 +54,7 @@ equipment_id serial,
 equipment_name varChar(50),
 description varChar(1000),
 img_src varChar(1000),
+instruction_src varChar(1000),
 
 CONSTRAINT PK_equipment PRIMARY KEY (equipment_id)
 );

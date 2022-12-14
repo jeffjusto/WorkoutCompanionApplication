@@ -11,7 +11,4 @@ public interface GymLogDao {
     List<GymLog> getAllById(int userId);
 
     void createGymLogEvent(GymLog gymLog);
-
-    public List<String> updateDifference();
-
 }

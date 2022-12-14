@@ -20,7 +20,9 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    isInSession: false,
+    gymLogCheckIn: ""
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -38,9 +40,12 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_GYM_LOG_SESSION(state) {
+      state.isInSession = !state.isInSession;
+    },
+    SET_GYM_LOG_CHECK_IN(state, checkIn) {
+      state.gymLogCheckIn = checkIn;
     }
-    // SAVE_PROFILE(state, profile) {
-      
-    // }
   }
 })

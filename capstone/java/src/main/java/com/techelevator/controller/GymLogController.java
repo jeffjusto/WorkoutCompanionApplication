@@ -38,13 +38,4 @@ public class GymLogController {
             System.out.println(e.getMessage());
         }
     }
-
-    @RequestMapping(path = "/gymLog", method = RequestMethod.PUT)
-    public void updateDifference() {
-        try {
-            dao.updateDifference();
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
 }

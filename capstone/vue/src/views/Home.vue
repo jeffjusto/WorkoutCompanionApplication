@@ -8,7 +8,7 @@
    
     <div class="card-container">
       <div class="gym-log-div-container">
-        <gym-log-div class="gym-log">
+        <gym-log-div class="gym-log-div">
           <font-awesome-icon icon="fa-solid fa-stopwatch" size="6x" />
         </gym-log-div>
       </div>
@@ -31,10 +31,6 @@
       <div class="card" v-on:click="openEquipmentList">
         <font-awesome-icon icon="fa-solid fa-dumbbell" size="6x" />
         <h2>VIEW MACHINES</h2>
-      </div>
-      <div class="card">
-        <font-awesome-icon icon="fa-solid fa-stopwatch" size="6x" />
-        <h2>LOG WORKOUT</h2>
       </div>
       <div class="card" v-on:click="openGymLog">
         <font-awesome-icon icon="fa-solid fa-stopwatch" size="6x" />
@@ -118,23 +114,7 @@ export default {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     color: #FFFFFF;
   }
-
-  .gym-log-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    background-color: #31394D;
-    border-radius: 6px;
-    height: 250px;
-    width: 250px;
-    margin: 20px;
-    padding: 40px 20px 20px 20px;
-    box-shadow: 0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    color: #FFFFFF;
-  }
-
+  
    .active {
     background-color: #c2496c;
   }

@@ -10,13 +10,13 @@ public class GymLog {
     private int userId;
     private Date checkIn;
     private Date checkOut;
-    private String difference;
+    private int difference;
 
 
     public GymLog() {
     }
 
-    public GymLog(int logId, int userId, Timestamp checkIn, Timestamp checkOut, String difference) {
+    public GymLog(int logId, int userId, Timestamp checkIn, Timestamp checkOut, int difference) {
         this.logId = logId;
         this.userId = userId;
         this.checkIn = checkIn;
@@ -40,32 +40,28 @@ public class GymLog {
         this.userId = userId;
     }
 
-    public Timestamp getCheckIn() {
-        Timestamp timestamp = new Timestamp(checkIn.getTime());
-        return timestamp;
+    public Date getCheckIn() {
+        return checkIn;
     }
 
     public void setCheckIn(Date checkIn) {
         this.checkIn = checkIn;
     }
 
-    public Timestamp getCheckOut() {
-        Timestamp timestamp = new Timestamp(checkOut.getTime());
-        return timestamp;
+    public Date getCheckOut() {
+        return checkOut;
     }
 
-    public void setCheckOut(Timestamp checkOut) {
+    public void setCheckOut(Date checkOut) {
         this.checkOut = checkOut;
     }
 
-    public String getDifference() {
+    public int getDifference() {
         return difference;
     }
 
-    public void setDifference(String difference) {
-        String[] differenceArray = difference.split(" ");
-//        difference = differenceArray[6] + " " + differenceArray[7] + " " + differenceArray[8] + " " + differenceArray[9];
-        this.difference = differenceArray[0];
+    public void setDifference(int difference) {
+        this.difference = difference;
     }
 
     @Override
@@ -75,7 +71,7 @@ public class GymLog {
                 ", userId=" + userId +
                 ", checkIn=" + checkIn +
                 ", checkOut=" + checkOut +
-                ", difference='" + difference + '\'' +
+                ", difference=" + difference +
                 '}';
     }
 }
