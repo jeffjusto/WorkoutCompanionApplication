@@ -1,12 +1,12 @@
 <template>
   <form class="card" v-on:submit.prevent="logEntry()">
     <div class="field">
-      <label for="name">Weight</label>
-      <input type="text" v-model="equipmentLog.weight">
+      <label for="weight">Weight</label>
+      <input type="text" placeholder="Weight" v-model="equipmentLog.weight">
     </div>
     <div class="field">
-      <label for="email">Reps</label>
-      <input type="text" v-model="equipmentLog.reps">
+      <label for="reps">Reps</label>
+      <input type="text" placeholder="Reps" v-model="equipmentLog.reps">
     </div>
     <div class="actions">
       <button class="btn" type="button" v-on:click="cancel()">Cancel</button>&nbsp;
@@ -26,7 +26,7 @@ export default {
       equipmentLog: {
         entryId: 0,
         userId: this.$store.state.user.id,
-        equipmentId: 1,
+        equipmentId: 0,
         equipmentCheckIn: this.$store.state.equipmentCheckIn,
         equipmentCheckOut: "",
         equipmentTimeInterval: "",
@@ -74,7 +74,7 @@ export default {
     margin-bottom: 20px;
     height: 30px;
     width: 100%;
-    background-color: lightgray;
+    background-color: FFFFFF;
   }
 
   label {

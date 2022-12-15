@@ -5,15 +5,15 @@
       </div>
       <div class="field">
         <label for="name">Name</label>
-        <input type="text" v-model="profile.name">
+        <input type="text" placeholder="Name" v-model="profile.name">
       </div>
       <div class="field">
         <label for="email">E-mail Address</label>
-        <input type="text" v-model="profile.email">
+        <input type="text" placeholder="E-mail Address" v-model="profile.email">
       </div>
       <div class="field">
         <label for="goals">Goals</label>
-        <input type="text" v-model="profile.goals">
+        <input type="text" placeholder="Goals" v-model="profile.goals">
       </div>
       <div class="actions">
         <button class="btn" type="button" v-on:click="cancel()">Cancel</button>&nbsp;
@@ -55,7 +55,7 @@ export default {
       });
     },
     cancel() {
-      this.$router.push("/");
+      this.$router.push({ name: 'my-profile' });
     }
   }
 } 
@@ -73,7 +73,7 @@ export default {
     margin-bottom: 20px;
     height: 30px;
     width: 100%;
-    background-color: lightgray;
+    background-color: FFFFFF;
   }
 
   .card {

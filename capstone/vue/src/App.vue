@@ -17,11 +17,31 @@
     height: 100vh;
   }
 
-  nav {
-    font-family: Arial, Helvetica, sans-serif;
+  label {
+    margin-top: 10px;
   }
 
-  a:hover { text-decoration: none; color:yellow; }
-a:focus { text-decoration: none; color:orange; }
-a:active { text-decoration: none; color:teal; }
+  a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    text-decoration: none
+  }
+
+  a:hover {
+    text-decoration: none;
+    color:#F54BA5;
+  }
+
+  a:focus {
+    text-decoration: none;
+    color:#F54BA5;
+  }
+
+  .router-link-active {
+    text-decoration: none;
+  }
+
+  .router-link-visited {
+    text-decoration: none;
+  }
 </style>

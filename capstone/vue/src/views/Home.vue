@@ -16,6 +16,10 @@
         <font-awesome-icon icon="fa-solid fa-user" size="6x" />
         <h2>VIEW MY PROFILE</h2>
       </div>
+      <div class="card" v-on:click="openEquipmentList">
+        <font-awesome-icon icon="fa-solid fa-dumbbell" size="6x" />
+        <h2>VIEW MACHINES</h2>
+      </div>
       <div class="card" v-on:click="openMyMetrics">
         <font-awesome-icon icon="fa-solid fa-heart" size="6x" />
         <h2>VIEW MY METRICS</h2>
@@ -24,15 +28,11 @@
         <font-awesome-icon icon="fa-solid fa-calendar-days" size="6x" />
         <h2>VIEW CALENDER</h2>
       </div>
-      <div class="card" v-on:click="openProfilesList">
+      <div class="card grey" v-on:click="openProfilesList">
         <font-awesome-icon icon="fa-solid fa-people-group" size="6x" />
         <h2>VIEW ALL PROFILES</h2>
       </div>
-      <div class="card" v-on:click="openEquipmentList">
-        <font-awesome-icon icon="fa-solid fa-dumbbell" size="6x" />
-        <h2>VIEW MACHINES</h2>
-      </div>
-      <div class="card" v-on:click="openGymLog">
+      <div class="card grey" v-on:click="openGymLog">
         <font-awesome-icon icon="fa-solid fa-stopwatch" size="6x" />
         <h2>VIEW GYM LOG</h2>
       </div>
@@ -100,6 +100,12 @@ export default {
 
   .card-container {
     margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 90%;
   }
   
   .card {
@@ -139,5 +145,13 @@ export default {
   .gym-log-div:hover {
     transform: scale(1.05);
     cursor: pointer;
+  }
+
+  .grey {
+    background-color: #808B96;
+  }
+
+  .grey:hover {
+    cursor: not-allowed;
   }
 </style>

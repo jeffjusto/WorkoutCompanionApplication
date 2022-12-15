@@ -14,7 +14,8 @@ export default {
     props: ['equipment'],
     data() {
         return {
-            showImage: true
+            showImage: true,
+            equipmentId: this.equipment.id
         }
     },
     methods: {
