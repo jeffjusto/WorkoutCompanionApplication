@@ -45,8 +45,8 @@ export default {
         margin-top: 100px;
         transform: scale(1.2);
     }
-    .btn{
-        margin-top: 100px;
+    #btn-edit-profile {
+        margin-top: 50px;
         border:none;
         height:50px;
         max-width: 300px;
@@ -58,8 +58,8 @@ export default {
         background: linear-gradient(to top right, #8162CE, #F54BA5);
     }
 
-    .btn:hover{
+    #btn-edit-profile:hover {
         cursor: pointer;
         transform: scale(1.02);
-        }
+    }
 </style>

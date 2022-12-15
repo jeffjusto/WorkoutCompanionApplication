@@ -3,7 +3,7 @@
         <img v-bind:src="showImage ? equipment.imgSrc : equipment.instructionSrc" v-bind:alt="equipment.name" v-on:click="toggleImg">
         <h3>{{ equipment.name }}</h3>
         <p>{{ equipment.description }}</p>
-        <button class="btn inactive" v-on:click.prevent="setCheckInTimestamp">Check into this machine</button>
+        <button class="btn-machine inactive" v-on:click.prevent="setCheckInTimestamp">Check into this machine</button>
     </div>
 </template>
 
@@ -69,7 +69,7 @@ export default {
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .btn {
+    .btn-machine {
         border:none;
         color:#ffffff;
         width:50%;
@@ -80,7 +80,7 @@ export default {
         height: 40px;
     }
 
-    .btn:hover{
+    .btn-machine:hover{
         cursor: pointer;
         transform: scale(1.02);
     }

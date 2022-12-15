@@ -14,6 +14,7 @@ import MyProfile from '../views/MyProfile'
 import Schedule from '../views/Schedule'
 import EquipmentLog from '../views/EquipmentLog'
 import MyMetrics from '../views/MyMetrics'
+import AddEmployee from '../views/AddEmployee'
 
 Vue.use(Router)
 
@@ -134,6 +135,14 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/profiles/employee",
+      name: "employee",
+      component: AddEmployee,
+      meta: {
+        requiresAuth: true
+      }
+    }
   ]
 })
 
