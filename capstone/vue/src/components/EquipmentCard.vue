@@ -77,6 +77,7 @@ export default {
         border-radius:5px;
         box-shadow: 0 13px 26px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.16);
         background: linear-gradient(to top right, #8162CE, #F54BA5);
+        height: 40px;
     }
 
     .btn:hover{

@@ -2,8 +2,8 @@
   <div class="home">
     <div class="title">
       <h1>WELCOME TO KEN'S GYM</h1>
+      <img src="https://i.pinimg.com/originals/4c/8c/d7/4c8cd70f405973e8266f2daec824395a.png" alt="Gym Logo">
       <h2>The gym where not even death is an excuse</h2>
-      <h3>Your user id is {{ this.$store.state.user.id }}</h3>
     </div>
    
     <div class="card-container">
@@ -28,13 +28,13 @@
         <font-awesome-icon icon="fa-solid fa-calendar-days" size="6x" />
         <h2>VIEW CALENDER</h2>
       </div>
+      <div class="card" v-on:click="openGymLog">
+        <font-awesome-icon icon="fa-solid fa-stopwatch" size="6x" />
+        <h2>VIEW GYM LOG</h2>
+      </div>
       <div class="card grey" v-on:click="openProfilesList">
         <font-awesome-icon icon="fa-solid fa-people-group" size="6x" />
         <h2>VIEW ALL PROFILES</h2>
-      </div>
-      <div class="card grey" v-on:click="openGymLog">
-        <font-awesome-icon icon="fa-solid fa-stopwatch" size="6x" />
-        <h2>VIEW GYM LOG</h2>
       </div>
     </div>
   </div>
@@ -153,5 +153,20 @@ export default {
 
   .grey:hover {
     cursor: not-allowed;
+  }
+
+  .title {
+    background: linear-gradient(to top right, #8162CE, #F54BA5);
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    color: #FFFFFF;
+    width: 30%;
+    margin: auto;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100px;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="register" class="text-center">
+  <div id="register" class="form-container">
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
@@ -32,7 +32,7 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
+      <router-link id="login" :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
@@ -90,4 +90,73 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+ form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    display: flex;
+    margin-top: 2px;
+    height: 25px;
+    width: 400px;
+    background-color: FFFFFF;
+  }
+
+  button {
+    margin: auto;
+    width: 80px;
+  }
+
+  label {
+    color: #FFFFFF;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #31394D;
+    border-radius: 6px;
+    height: 350px;
+    width: 600px;
+    margin: 20px;
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+    box-shadow: 0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    font-family: Arial, Helvetica, sans-serif;
+    color:#ffffff;
+    margin: auto;
+  }
+
+  .btn {
+    border:none;
+    height:30px;
+    max-width: 300px;
+    margin-top: 20px;
+    color:#ffffff;
+    width:35%;
+    font-size:16px;
+    border-radius:10px;
+    box-shadow: 0 13px 26px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.16);
+    background: linear-gradient(to top right, #8162CE, #F54BA5);
+    }
+
+  .btn:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+
+  #login {
+       color:#ffffff;
+       margin-top: 10px;
+       font-size: 16px;
+       align-self: flex-end;
+  }
+
+   #login:hover {
+      color:#F54BA5;
+  }
+</style>
